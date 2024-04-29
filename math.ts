@@ -7,11 +7,11 @@ export function sub(a: number, b: number): number {
 }
 
 export function sum(a: number[]): number {
-  let sum = 0;
+  let sum = 0n;
   for (const n of a) {
-    sum = add(sum, n);
+    sum += BigInt(Math.round(n));
   }
-  return sum;
+  return Number(sum);
 }
 
 export function mean(a: number[]): number {
